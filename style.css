@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap");
+* *::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100%;
+}
+
+:root {
+  --Lato: 'Lato', sans-serif;
+  --Poppins: 'Poppins', sans-serif;
+  --Cabin: 'Cabin', sans-serif;
+  --Primary-clr: #5200FF;
+  --Secondary-clr: #FFF2F5;
+  --White: #ffffff;
+  --Black: #000000;
+  --Container-Padding: 20px 100px;
+}
+
+.container {
+  --Container-Padding: 20px 10px;
+  padding: var(--Container-Padding);
+  overflow: hidden;
+}
+
+.hero {
+  height: 100%;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.hero .row .left {
+  padding: 0px 15px;
+}
+
+.hero .row .left .title {
+  font-family: var(--Lato);
+  width: 300px;
+  line-height: 1.50em;
+}
+
+.hero .row .left .title .highlight {
+  color: var(--Primary-clr);
+}
+
+.hero .row .right {
+  margin-top: 50px;
+  height: 50%;
+}
+
+.hero .row .right .phone {
+  height: 600px;
+  width: 300px;
+  overflow: hidden;
+  -webkit-box-shadow: 5px -8px 200px 18px rgba(213, 210, 210, 0.733);
+          box-shadow: 5px -8px 200px 18px rgba(213, 210, 210, 0.733);
+  border-radius: 20px;
+  position: relative;
+}
+
+.hero .row .right .phone img {
+  position: absolute;
+  border-radius: 10px;
+  width: calc(300px - 35%);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  top: 7%;
+  left: 17%;
+}
+
+.hero .row .right .phone img:nth-of-type(1) {
+  z-index: 4;
+}
+
+.hero .row .right .phone img:nth-of-type(2) {
+  z-index: 3;
+}
+
+.hero .row .right .phone img:nth-of-type(3) {
+  z-index: 2;
+}
+
+.hero .row .right .phone img:nth-of-type(4) {
+  z-index: 1;
+}
+
+.hero .row .right .phone .elements {
+  position: absolute;
+  text-align: center;
+  top: 60%;
+  width: 100%;
+}
+
+.hero .row .right .phone .elements h3 {
+  font-family: var(--Poppins);
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.hero .row .right .phone .elements h3:nth-of-type(2) {
+  margin-bottom: 30px;
+}
+
+.btn {
+  color: var(--btn-clr);
+  background: var(--btn-bg);
+  font-family: var(--btn-font);
+  padding: var(--btn-padding);
+  border-radius: var(--btn-radius);
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.primary {
+  --btn-bg: var(--Primary-clr);
+  --btn-clr: var(--White);
+  --btn-font: var(--Lato);
+  --btn-padding: 0.9em 2.5em;
+  --btn-radius: 5px;
+}
+
+.primary-2 {
+  display: inline;
+  --btn-bg: var(--Primary-clr);
+  --btn-clr: var(--White);
+  --btn-font: var(--Lato);
+  --btn-padding: 0.9em 2em;
+  --btn-radius: 5px;
+}
+
+button {
+  border: none;
+}
+
+@media (min-width: 768px) {
+  .container {
+    --Container-Padding: 20px 10px;
+  }
+  .hero .row {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .hero .row .left .title {
+    width: 400px;
+  }
+  .hero .row .right .phone {
+    height: 550px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    --Container-Padding: 20px 60px;
+  }
+  .hero {
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+  }
+  .hero .row .left .title {
+    width: 450px;
+  }
+  .hero .row .right .phone {
+    margin-left: 150px;
+  }
+  .hero .row .right .phone .elements {
+    top: 65%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
